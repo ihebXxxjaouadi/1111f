@@ -1,0 +1,293 @@
+.editReclatmationContainer {
+    height: 100%;
+    header {
+        height: 10%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 5px;
+        p {
+            font-size: 1.2em;
+        }
+    }
+
+    main {
+        height: 90%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .btnTraiterNonTraiterContainer {
+            margin-top: -40px;
+
+            .traiterBTN {
+                all: unset;
+                margin-right: 20px;
+                color: white;
+
+                    text-decoration: none;
+                    padding: 8px 15px;
+                    background-color: #1fb2bfaa;
+                    transition: 0.1s;
+                    border-left: 5px solid #1fb2bf;
+
+                    &:hover, &:focus {
+                        background-color: #1fb2bf;
+                        cursor: pointer;}
+
+            }
+            .nonTraiterBTN {
+                all: unset;
+                cursor: pointer;
+                color: white;
+
+                text-decoration: none;
+                padding: 8px 15px;
+                background-color: rgba(255, 0, 0, 0.444);
+                transition: 0.1s;
+                border-left: 3px solid red;
+
+                &:hover, &:focus {
+                background-color: rgba(255, 0, 0, 0.59);}
+
+            }
+        }
+        header {    
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 80%;
+
+            p {
+                font-size: 0.8em;
+            }
+        }
+        justify-content: center;
+        .traiterViewTransition {
+            animation: animatetraiterViewTransition 0.5s;
+             
+            @keyframes animatetraiterViewTransition {
+                0% {
+                    opacity: 0;            
+    
+                    }
+                50% {
+                transform: translateX(-50px);    
+                opacity: 0;            
+
+                }
+                100% {
+                    transform: translateX(0px);    
+                    opacity: 1;            
+    
+                    }
+    
+            }
+        }
+
+        .nonTraiterViewTransition {
+            animation: animatenonTraiterViewTransition 0.5s;
+             
+            @keyframes animatenonTraiterViewTransition {
+                0% {
+                    opacity: 0;            
+    
+                    }
+                50% {
+                transform: translateX(50px);    
+                opacity: 0;            
+
+                }
+                100% {
+                    transform: translateX(0px);    
+                    opacity: 1;            
+    
+                    }
+            }
+        }
+        .allReclamationData {
+            
+            width: 90%;
+            height: 85%;
+            border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #ccc;
+            }
+            &::-webkit-scrollbar-track {
+                background: #1fb2bf20;
+
+            }
+
+    .popUpContainer {
+        
+    .notification {
+        padding: 15px 20px;
+        background: #34fa657c;
+        border-bottom: 5px solid #07ea40 ;
+        text-align: center;
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: 400;
+        display: none;
+    }
+
+    .showNot {
+        display: block;
+    }
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #11111150;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+
+        section {
+            width: 60%;
+            height: 60%;
+            background-color: #eee;
+            main {
+
+                height: 80%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: row;
+                    .inputContainer
+                    {
+                        
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                input{
+                    all: unset;
+                    padding: 10px 10px ;
+                    margin: 5px;
+                    background-color: #18a4b120;
+                    color: #111;
+                    border-bottom: 2px solid #1fb2bf;
+                    width: 300px;
+                    text-align: center;
+                }
+                    }
+                    .textareaContainer {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                    textarea{
+
+                        all: unset;
+                        border: 2px solid #1fb2bf;
+
+                        height: 220px;
+                        width: 300px;
+                        margin: 5px;
+                        background-color: #18a4b120;
+                        color: #111;
+                    }
+
+                }
+            }
+            footer {
+                height: 10%;
+
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: end;
+
+        button {
+            all: unset;
+            cursor: pointer;
+            transform: translateX(-50%);
+            margin:   0 10px;
+
+            padding: 15px 10px;
+            color: white;
+            &:first-of-type {
+                border-left: 3px solid red;
+                background-color: rgba(255, 0, 0, 0.571);
+        }
+
+
+            &:last-of-type {
+
+                border-left: 5px solid #1fbf4f;
+                background-color: #1fbf3cbb;
+            }
+           
+        }
+            }
+        }
+    }
+            .reclamationInfo {
+            border: none;
+            border-left: 5px solid #1fb2bf;
+                    margin: 10px 0 0 0;
+                width: 95%;
+                min-height: 80px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                
+                button {
+                    all: unset;
+
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(-100%,-50%);
+
+                    padding: 21px 10px;
+                    background-color: rgba(118, 102, 102, 0.677);
+                    color: #fff;
+                    cursor: pointer;
+                    img {
+                        width: 27px;
+                        height: 27px;
+                        filter: invert(1);
+                    
+                    }
+                    
+                }
+                
+
+
+                transform: scale(0.95) translate(30px);
+                border-left: none;
+            }
+
+        .traiter {
+            background-color: #14c94a48;
+
+        }
+
+        .nonTraiter {
+        background-color: #c72e2e37;
+            
+        }
+
+        
+
+        }
+    }
+}

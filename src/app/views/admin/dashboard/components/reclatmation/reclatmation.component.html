@@ -1,0 +1,78 @@
+<section class="editReclatmationContainer">
+    <header>
+        <p>
+
+
+            Tous les recents reclamations
+        </p>
+    </header>
+    <main>
+        <div class="btnTraiterNonTraiterContainer">
+            <button class="traiterBTN" (click)="setTraiterView()">
+                reclamation traiter
+            </button>
+            <button class="nonTraiterBTN" (click)="setNTraiterView()">
+                reclamation non traiter
+                
+            </button>
+        </div>
+        <header>
+            <p>date</p>
+            <p>nom produit</p>
+            <p>nom l'acheteur</p>
+            <p>email l'acheteur</p>
+            <p>tel l'acheteur</p>
+            <p>nom livreur</p>
+            <p>email livreur</p>
+            <p>tel livreur</p>
+        </header>
+        <div class="allReclamationData" [ngClass]="{'nonTraiterViewTransition': !tnt, 'traiterViewTransition': tnt}">
+            
+            <ng-container *ngIf="popUpView" >
+                <div class="popUpContainer">
+                    <div class="notification" [ngClass]="{'showNot' : isNot}">
+                        reclamation envoyeé !
+                      </div>
+                    <section>
+                        
+                        <main>
+                            <div class="inputContainer" >
+                                <input type="text" placeholder="user" value={{popUpViewData.date}} readonly>
+                        <input type="text" placeholder="description" value={{popUpViewData.description}} readonly>
+                        <input type="text" placeholder="etat" value={{popUpViewData.etat}} readonly>
+                        <input type="text" placeholder="reference" value={{popUpViewData.produit.prix}}DT readonly>
+                            </div> 
+                            <div class="textareaContainer">
+    
+                        <textarea value={{popUpViewData.produit.reclamation}} cols="30" rows="10"></textarea>                    
+                            </div>
+                        </main>
+                        <footer>
+                            <button (click)="showPassDataView(popUpViewData)">
+                                fermer
+                            </button>
+                            <button *ngIf="!tnt" (click)="setConfirmedEtat(popUpViewData)">
+                                confirmer
+                            </button>
+                        </footer>
+                    </section>
+                </div>
+            </ng-container>
+            <div class="reclamationInfo" *ngFor="let ri of reclamation " [ngClass]="{'traiter': tnt, 'nonTraiter': !tnt}">
+                <button  type="button" (click)="showPassDataView(ri)">
+                    <img src="/assets/document-editor.png" alt="edit">
+                    
+                </button>
+                <p>{{ ri.date }}</p>
+                <p>{{ ri.produit.nom }}</p>
+                <p>{{ ri.acheteur.nomUser }}</p>
+                <p>{{ ri.acheteur.emailUser }}</p>
+                <p>{{ ri.acheteur.numTel }}</p>
+                <p>{{ ri.livreur.nomUser }}</p>
+                <p>{{ ri.livreur.emailUser }}</p>
+                <p>{{ ri.livreur.numTel }}</p>
+
+            </div>
+        </div>
+    </main>
+</section>

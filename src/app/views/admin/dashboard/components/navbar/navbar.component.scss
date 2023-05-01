@@ -1,0 +1,77 @@
+.navbarr {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+        width: 85%;
+        height: 98%;
+        border-radius: 5px;
+        box-shadow: 0 0 20px #aaa;
+        background-color: #fff;
+        .adminContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        background-color: #1fb2bf;
+            padding: 10px 0;
+            border-radius: 5px;
+            span {
+                font-size: 2em;
+                color: white;
+            }
+            img {
+            width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    ul {
+        margin-top: 30px;
+        li {
+            &.activate {
+                border-left: 5px solid #1fb2bf;
+            }
+            &.notActivate {
+                border-left: 5px solid #1fb2bf20;
+            }
+
+            &.activatedParDate {
+                border-left: 5px solid #1fb2bf;
+
+            }
+            list-style-type: none;
+        text-align: center;
+        padding: 10px 5px;
+            border: 2px solid;
+        margin: 5px 25px;
+
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            border: none;
+            border-left: 5px solid #1fb2bf20;
+        background-color: #1fb2bf20;
+            
+            span {
+
+                color: #111;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+            img {
+                width: 25px;
+                height: 25px;
+            }
+            &:hover {
+        background-color: #1fb2bf70;
+       
+            }
+        }
+    }
+}

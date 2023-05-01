@@ -1,0 +1,14 @@
+<div class="loginView">
+    
+    <div class="loginForm">
+      <header>
+        <h1>Log in user</h1>
+      </header>
+      <main>
+        <input type="text" placeholder="user" #user (keyup)="onKeyUser(user.value)">
+        <input type="password" placeholder="password" #pass (keyup)="onKeyPass(pass.value)">
+        <button (click)="logIn()" >connecter</button>
+      </main>
+      <app-footer></app-footer>
+    </div>
+  </div>

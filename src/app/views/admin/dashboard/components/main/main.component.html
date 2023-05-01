@@ -1,0 +1,13 @@
+<div class="main">
+    <div class="container">
+        <ng-container *ngIf="visible">
+            <app-reclatmation></app-reclatmation>
+
+        </ng-container>
+
+        <ng-container *ngIf="!visible">
+            <app-pie-chart [visibleParDate]="visibleParDate"></app-pie-chart>
+
+        </ng-container>
+    </div>
+</div>

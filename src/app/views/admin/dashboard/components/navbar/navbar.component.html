@@ -1,0 +1,23 @@
+<div class="navbarr">
+    <div class="container">
+        <div class="adminContainer">
+            <span>Admin</span>
+            <img src="assets/avatar.png" alt="avatar">
+        </div>
+    <ul>
+        <li [ngClass]="{'activate': activated}" (click)="setFirstView()"> 
+            <img src="assets/communication.png" alt="avatar">
+            <span>reclamation</span>
+        </li>
+
+        <li [ngClass]="{'activate': !activated}" (click)="setSecondView()">
+            <img src="assets/pie-chart.png" alt="avatar">
+            <span>statistique</span>
+        </li>
+        <li [ngClass]="{'activatedParDate': activatedParDate}" (click)="setactivatedParDateView()">
+            <img src="assets/schedule.png" alt="avatar">
+            <span>date</span>
+        </li>
+    </ul>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="addReclamationView">
+    <div class="animatedContainer">
+      <span>Quel ton <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; reclatmation</span>
+    </div>
+    <div class="reclamationForm">
+      <header>
+        <h1>Creér ton form</h1>
+      </header>
+      <main>
+        <div class="notification" [ngClass]="{'showNot' : isNot}">
+          reclamation envoyeé !
+        </div>
+        <div class="inlineInput">
+          <div>
+
+            <input type="text" value="wathek"  placeholder="nom"  readonly>
+          <!-- <p [ngClass]="{'reducepad' : nmCntr}">{{nmCntr}}</p> -->
+          </div>
+  <div>
+
+    <input type="text"  placeholder="wathek"  readonly> 
+  <!-- <p [ngClass]="{'reducepad' : pnmCntr}">{{pnmCntr}}</p> -->
+  </div>          
+
+        </div>
+        <input type="text" placeholder="email" #email (keyup)="fillemail(email.value)">
+        <p [ngClass]="{'reducepad' : emailCntr}">{{emailCntr}}</p>
+        <input type="text" placeholder="adresse" #add (keyup)="filladd(add.value)">
+        <p [ngClass]="{'reducepad' : addCntr}">{{addCntr}}</p>
+
+
+
+        <select (change)="changerecdataLivName($event)" id='dropdown' >
+          <option value="" > ---select livreur--- </option>
+
+          <option  *ngFor="let cdln of recdataLivName "  [value]="cdln.id" > {{cdln.nm}} </option>
+    
+        </select>
+        <p [ngClass]="{'reducepad' : livCntr}">{{livCntr}}</p>
+
+
+        <select (change)="changerecdataRef($event)" id='dropdown'>
+             <option value="" > ---select refence--- </option>
+
+              <option  *ngFor="let cdref of recdataProduitReference "  [value]="cdref.id" > {{cdref.ref}} </option>
+        </select>
+
+        <p [ngClass]="{'reducepad' : refCntr}">{{refCntr}}</p>
+
+        
+
+        <textarea cols="20" rows="7" placeholder="reclamation" #rec (keyup)="fillrec(rec.value)"></textarea>
+        <p [ngClass]="{'reducepad' : recCntr}">{{recCntr}}</p>
+
+        <button type="button" (click)="checkSendForm()">Envoyer</button>
+      </main>
+      <app-footer></app-footer>
+    </div>
+  </div>

@@ -1,0 +1,204 @@
+.addReclamationView {
+    #select-container {
+        height: 40px;
+        position: relative;
+        width: 420px;
+      }
+      
+      #dropdown {
+        border: 1px solid #1fb2bf;
+        border-radius: 5px;
+        background:#1fb2bf7d;
+        color: #111;
+        cursor: pointer;
+        outline: none;
+        padding: 0 0 0 20px;
+        width: 500px;
+        height: 70px;
+      }
+      #dropdown option {
+        background: #005a2b;
+        color: #ffffff;
+      }
+      
+      #dropdown-image {
+        height: 40px;
+        pointer-events: none;
+        position: absolute;
+        transform: translateX(-100%);
+        width: 40px;
+      }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .reducepad {
+        margin: -10px;
+        align-self: center;
+        color: red;
+    }
+
+    .notification {
+        padding: 15px 20px;
+        background: #47d56a7c;
+        border-bottom: 5px solid #07ea40 ;
+        text-align: center;
+        color: #111;
+        font-weight: 2em;
+        display: none;
+    }
+
+    .showNot {
+        display: block;
+    }
+    .animatedContainer {
+
+        width: 45%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background-color: #1fb2bf;
+            animation: animate 20s both;
+            filter: blur(40px);
+
+            @keyframes animate {
+                from {
+                    background-color: #1fb2bf;
+
+                }
+
+                20% {
+                    background-color: #ddf66f;
+                }
+
+
+                40% {
+                    background-color: #6af68d;
+                }
+
+
+                60% {
+                    background-color: #f66fc2;
+                }
+
+
+
+                80% {
+                    background-color: #F6BA6F;
+                }
+
+                100% {
+                    background-color: #ECC9EE;
+                }
+            }
+        }
+
+        span {
+            color: #111111a7;
+            font-size: 40px;
+            font-weight: 400;
+            transform: translateY(20px);
+            opacity: 0;
+            text-transform: uppercase;
+            animation: animateTextAppearance 0.5s 0.5s forwards ease-in-out;
+
+            @keyframes animateTextAppearance {
+                50%, to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    .reclamationForm {
+
+        width: 55%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        header {
+
+            h1 {
+                font-weight: 100;
+                font-size: 50px;
+            }
+        }
+        main {
+            width: min-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            input, textarea {
+                all: unset;
+                border-bottom: 2px solid #1fb2bf;
+                padding: 10px 55px;
+
+                &:hover, &:focus {
+                    background-color: #1fb2bf2e;
+                }
+                margin: 5px 10px;
+            }
+
+            textarea {
+                all: unset;
+                border: 2px solid #1fb2bf;
+                padding: 10px 25px;
+                &:hover, &:focus {
+                    background-color: #1fb2bf2e;
+                }
+                margin: 5px 20px;
+            }
+            
+            button {
+                all: unset;
+                padding: 15px 25px;
+                cursor: pointer;
+                margin : 10px 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 2px 2px 5px 0px #1fb2bf;
+                color: white;
+                background-color: #1fb2bf;
+                transition: 0.1s;
+                &:hover
+                {
+                    transform: translateY(-5px);
+                     box-shadow: 5px 5px 15px 0px #1fb2bf;
+
+                    color: white;
+                    background-color: #1fb2bf;
+                }
+            }
+
+            .inlineInput {
+
+            display: flex;
+            justify-content: space-between;
+                input {
+                    width: 45%;
+
+                }
+            }
+        }
+    }
+}

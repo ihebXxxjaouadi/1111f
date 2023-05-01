@@ -1,0 +1,18 @@
+<div class="chart-container">
+    <header>
+        <p>
+
+            le statistique de reclamation
+        </p>
+    </header>
+    
+    <div class="ngg" *ngIf="visibleParDate">
+        <input type="date" (change)="getChartWithDate($event)">
+        <img (click)="reload()" src="/assets/refresh.png" alt="">
+    
+    </div>
+
+
+
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>
